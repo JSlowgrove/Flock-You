@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec2',['Vec2',['../struct_vec2.html',1,'Vec2'],['../struct_vec2.html#a76080feed7005893ecc634f903cfbae0',1,'Vec2::Vec2()'],['../struct_vec2.html#a08e2e10202361659c3b7d003ee84ebec',1,'Vec2::Vec2(float inputX, float inputY)']]]
+  ['update',['update',['../class_game.html#a34db1b512678bf1bf0bd8e0d56723b18',1,'Game']]]
 ];

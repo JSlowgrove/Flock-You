@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boid',['Boid',['../class_boid.html',1,'Boid'],['../class_boid.html#aa0c991f0bbe21209e22fcf81002dab11',1,'Boid::Boid()']]]
+  ['audio',['Audio',['../class_audio.html',1,'Audio'],['../class_audio.html#ae1900ee0e5254fe0c96e0b423ea02777',1,'Audio::Audio()']]]
 ];

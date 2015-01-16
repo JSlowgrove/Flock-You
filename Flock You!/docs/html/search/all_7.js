@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['texture',['Texture',['../class_texture.html',1,'Texture'],['../class_texture.html#a3e603c08f4b2b4f43822a99a6b865bee',1,'Texture::Texture(SDL_Renderer *, int, int, int)'],['../class_texture.html#a10abeebb644ea969c78f4fa443ec17c1',1,'Texture::Texture(std::string, SDL_Renderer *)'],['../class_texture.html#a6edf59e3b10e474356e8a7878af56b83',1,'Texture::Texture(std::string, SDL_Renderer *, bool)']]]
+  ['setposition',['setPosition',['../class_boid.html#a62ebe99b4a19edfc2d0a6f1ac58e9658',1,'Boid']]],
+  ['setscale',['setScale',['../class_boid.html#a4443fb5d1fb425b9fede21c3cee2ba84',1,'Boid']]],
+  ['startaudio',['startAudio',['../class_audio.html#a15f1ea89039f6dbbb2260bb34f9dabdd',1,'Audio']]],
+  ['stopaudio',['stopAudio',['../class_audio.html#a5d73ae24c80b37df5f167016de9c9296',1,'Audio']]]
 ];

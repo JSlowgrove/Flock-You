@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <iostream>
 #include "game.h"
 
@@ -18,6 +19,13 @@ int main(int argc, char *argv[])
 	{
 		/*Failed initialisation*/
 		std::cout << "SDL_ttf init failed: " << TTF_GetError << std::endl;
+		return -1;
+	}
+
+	/*Initialise SDL_mixer*/
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+	{
+		std::cout << "Failed to initialise SDL Mixer, Error is: " << Mix_GetError() << std::endl;
 		return -1;
 	}
 
