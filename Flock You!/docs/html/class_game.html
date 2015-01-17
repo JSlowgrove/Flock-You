@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -88,41 +89,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Creates an <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object that runs the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> Creates an <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object that runs the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a>.  
+<p>Creates an <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> object that inherits <a class="el" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. ">State</a> Creates an <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> object that inherits <a class="el" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. ">State</a> and runs the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a>.  
  <a href="class_game.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="game_8h_source.html">game.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Game:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game__inherit__graph.png" border="0" usemap="#_game_inherit__map" alt="Inheritance graph"/></div>
+<map name="_game_inherit__map" id="_game_inherit__map">
+<area shape="rect" id="node2" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. " alt="" coords="5,5,117,185"/></map>
+</div>
 <div class="dynheader">
 Collaboration diagram for Game:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game__coll__graph.png" border="0" usemap="#_game_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_coll__map" id="_game_coll__map">
-</map>
+<area shape="rect" id="node2" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. " alt="" coords="20,248,129,413"/><area shape="rect" id="node3" href="class_state_manager.html" title="Creates a StateManager object. Creates a StateManager object to be inherited. " alt="" coords="5,5,144,185"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa16f7f0fe07387c1fda7f27858b2ff66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa16f7f0fe07387c1fda7f27858b2ff66">Game</a> (SDL_Renderer *, int, int)</td></tr>
-<tr class="separator:aa16f7f0fe07387c1fda7f27858b2ff66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152727bb1c8f9af5cf824cd4ddbb055b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a152727bb1c8f9af5cf824cd4ddbb055b">Game</a> (<a class="el" href="class_state_manager.html">StateManager</a> *, SDL_Renderer *, int, int)</td></tr>
+<tr class="separator:a152727bb1c8f9af5cf824cd4ddbb055b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d112ca6e0e55150d2fdbc704474530"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
 <tr class="separator:ae3d112ca6e0e55150d2fdbc704474530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e3ee4ac1c5ee591527cd13cfb4cfab2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6e3ee4ac1c5ee591527cd13cfb4cfab2">input</a> ()</td></tr>
 <tr class="separator:a6e3ee4ac1c5ee591527cd13cfb4cfab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34db1b512678bf1bf0bd8e0d56723b18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a34db1b512678bf1bf0bd8e0d56723b18">update</a> (float)</td></tr>
-<tr class="separator:a34db1b512678bf1bf0bd8e0d56723b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419466336fad97182f5051e11f541636"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a419466336fad97182f5051e11f541636">update</a> (float deltaTime)</td></tr>
+<tr class="separator:a419466336fad97182f5051e11f541636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d54497ce3a66f6dd45eacfdccc8d0bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6d54497ce3a66f6dd45eacfdccc8d0bd">draw</a> ()</td></tr>
 <tr class="separator:a6d54497ce3a66f6dd45eacfdccc8d0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_state"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_state.html">State</a></td></tr>
+<tr class="memitem:a68fb4089a66325a22f15311356e9df87 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a68fb4089a66325a22f15311356e9df87">State</a> (<a class="el" href="class_state_manager.html">StateManager</a> *, SDL_Renderer *, int, int)</td></tr>
+<tr class="separator:a68fb4089a66325a22f15311356e9df87 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab438d92b90dc18d194dbd9c9c8bab3 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#afab438d92b90dc18d194dbd9c9c8bab3">~State</a> ()</td></tr>
+<tr class="separator:afab438d92b90dc18d194dbd9c9c8bab3 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_state"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_state')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_state.html">State</a></td></tr>
+<tr class="memitem:a78388f59b0a570faa4b7ea640fea668e inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78388f59b0a570faa4b7ea640fea668e"></a>
+<a class="el" href="class_state_manager.html">StateManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>stateManager</b></td></tr>
+<tr class="separator:a78388f59b0a570faa4b7ea640fea668e inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79f979055823ec66fb7919e90ddd5c9 inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad79f979055823ec66fb7919e90ddd5c9"></a>
+SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><b>renderer</b></td></tr>
+<tr class="separator:ad79f979055823ec66fb7919e90ddd5c9 inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fab86df7026a683af0dd9b81eea65c5 inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fab86df7026a683af0dd9b81eea65c5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>screenWidth</b></td></tr>
+<tr class="separator:a6fab86df7026a683af0dd9b81eea65c5 inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd877e4a19f392ed3915b518c49cb68b inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd877e4a19f392ed3915b518c49cb68b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>screenHeight</b></td></tr>
+<tr class="separator:afd877e4a19f392ed3915b518c49cb68b inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Creates an <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object that runs the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> Creates an <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object that runs the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a>. </p>
+<div class="textblock"><p>Creates an <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> object that inherits <a class="el" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. ">State</a> Creates an <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> object that inherits <a class="el" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. ">State</a> and runs the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aa16f7f0fe07387c1fda7f27858b2ff66"></a>
+<a class="anchor" id="a152727bb1c8f9af5cf824cd4ddbb055b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Game::Game </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="class_state_manager.html">StateManager</a> *&#160;</td>
+          <td class="paramname"><em>inStateManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">SDL_Renderer *&#160;</td>
           <td class="paramname"><em>inRenderer</em>, </td>
         </tr>
@@ -145,8 +180,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs an <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object Constructs the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructs an <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> object </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_state_manager.html" title="Creates a StateManager object. Creates a StateManager object to be inherited. ">StateManager</a></td><td>* a pointer to the <a class="el" href="class_state_manager.html" title="Creates a StateManager object. Creates a StateManager object to be inherited. ">StateManager</a> </td></tr>
     <tr><td class="paramname">SDL_Renderer</td><td>* a pointer to the renderer </td></tr>
     <tr><td class="paramname">int</td><td>the screen width </td></tr>
     <tr><td class="paramname">int</td><td>the screen height </td></tr>
@@ -168,7 +204,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>De-constructs an <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object De-constructs the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object </p>
+<p>Destructs an <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> object </p>
 
 </div>
 </div>
@@ -176,6 +212,9 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="a6d54497ce3a66f6dd45eacfdccc8d0bd"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Game::draw </td>
@@ -184,14 +223,24 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Draws the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object </p>
+<p>A function to draw to the screen </p>
+
+<p>Implements <a class="el" href="class_state.html#ae261605bc40b7e3959ce5df5457e4942">State</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a6e3ee4ac1c5ee591527cd13cfb4cfab2"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Game::input </td>
@@ -200,31 +249,47 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Handles the game input </p><dl class="section return"><dt>Returns</dt><dd>bool if false the quit game </dd></dl>
+<p>Handles the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> input </p><dl class="section return"><dt>Returns</dt><dd>bool if false the quit the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> <a class="el" href="class_state.html" title="Creates a State object. Creates a State object to be inherited. ">State</a> </dd></dl>
+
+<p>Implements <a class="el" href="class_state.html#ac0dcfe3db8d012b37e6935f4f805ece7">State</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a34db1b512678bf1bf0bd8e0d56723b18"></a>
+<a class="anchor" id="a419466336fad97182f5051e11f541636"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Game::update </td>
+          <td class="memname">void Game::update </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Update the <a class="el" href="class_game.html" title="Creates an Game object that runs the Game Creates an Game object that runs the Game. ">Game</a> object </p><dl class="params"><dt>Parameters</dt><dd>
+<p>A function to update the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> A function to update the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> to allow the <a class="el" href="class_game.html" title="Creates an Game object that inherits State Creates an Game object that inherits State and runs the Ga...">Game</a> to run </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">float</td><td>the deltaTime </td></tr>
+    <tr><td class="paramname">float</td><td>the delta time </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool if false the quit game </dd></dl>
+
+<p>Implements <a class="el" href="class_state.html#a8f582ba039a10fff9712b6a21ef22808">State</a>.</p>
 
 </div>
 </div>
@@ -235,7 +300,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 16 2015 18:11:47 for Flock You! by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 17 2015 14:48:47 for Flock You! by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

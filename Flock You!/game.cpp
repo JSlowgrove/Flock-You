@@ -3,15 +3,11 @@
 /**************************************************************************************************************/
 
 /*Constructs the game object*/
-Game::Game(SDL_Renderer * inRenderer, int inWidth, int inHeight)
+Game::Game(StateManager * inStateManager, SDL_Renderer* inRenderer, int inWidth, int inHeight) 
+	: State(inStateManager, inRenderer, inWidth, inHeight)
 {
 	/*initialize random seed*/
 	srand(time(NULL));
-	/*set pointer to the renderer*/
-	renderer = inRenderer;
-	/*load the screen dimensions*/
-	screenWidth = inWidth;
-	screenHeight = inHeight;
 	/*a texture of a white square*/
 	whiteSquare = new Texture(renderer, 255, 255, 255);
 	/*initialise a random number of Boid objects*/
@@ -24,7 +20,7 @@ Game::Game(SDL_Renderer * inRenderer, int inWidth, int inHeight)
 
 /**************************************************************************************************************/
 
-/*De-constructs the game object*/
+/*Destructs the game object*/
 Game::~Game()
 {
 	
@@ -63,9 +59,8 @@ bool Game::input()
 /**************************************************************************************************************/
 
 /*updates the game*/
-bool Game::update(float dt)
+void Game::update(float dt)
 {
-	return true;
 }
 
 /**************************************************************************************************************/

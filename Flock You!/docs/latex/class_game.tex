@@ -3,7 +3,7 @@
 }
 
 
-Creates an \hyperlink{class_game}{Game} object that runs the \hyperlink{class_game}{Game} Creates an \hyperlink{class_game}{Game} object that runs the \hyperlink{class_game}{Game}.  
+Creates an \hyperlink{class_game}{Game} object that inherits \hyperlink{class_state}{State} Creates an \hyperlink{class_game}{Game} object that inherits \hyperlink{class_state}{State} and runs the \hyperlink{class_game}{Game}.  
 
 
 
@@ -12,44 +12,58 @@ Creates an \hyperlink{class_game}{Game} object that runs the \hyperlink{class_ga
 
 
 
+Inheritance diagram for Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_game__inherit__graph}
+\end{center}
+\end{figure}
+
+
 Collaboration diagram for Game\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=144pt]{class_game__coll__graph}
+\includegraphics[width=200pt]{class_game__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_game_aa16f7f0fe07387c1fda7f27858b2ff66}{Game} (S\+D\+L\+\_\+\+Renderer $\ast$, int, int)
+\hyperlink{class_game_a152727bb1c8f9af5cf824cd4ddbb055b}{Game} (\hyperlink{class_state_manager}{State\+Manager} $\ast$, S\+D\+L\+\_\+\+Renderer $\ast$, int, int)
 \item 
 \hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game} ()
 \item 
 bool \hyperlink{class_game_a6e3ee4ac1c5ee591527cd13cfb4cfab2}{input} ()
 \item 
-bool \hyperlink{class_game_a34db1b512678bf1bf0bd8e0d56723b18}{update} (float)
+void \hyperlink{class_game_a419466336fad97182f5051e11f541636}{update} (float delta\+Time)
 \item 
 void \hyperlink{class_game_a6d54497ce3a66f6dd45eacfdccc8d0bd}{draw} ()
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-Creates an \hyperlink{class_game}{Game} object that runs the \hyperlink{class_game}{Game} Creates an \hyperlink{class_game}{Game} object that runs the \hyperlink{class_game}{Game}. 
+Creates an \hyperlink{class_game}{Game} object that inherits \hyperlink{class_state}{State} Creates an \hyperlink{class_game}{Game} object that inherits \hyperlink{class_state}{State} and runs the \hyperlink{class_game}{Game}. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_game_aa16f7f0fe07387c1fda7f27858b2ff66}{\index{Game@{Game}!Game@{Game}}
+\hypertarget{class_game_a152727bb1c8f9af5cf824cd4ddbb055b}{\index{Game@{Game}!Game@{Game}}
 \index{Game@{Game}!Game@{Game}}
 \subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::\+Game (
 \begin{DoxyParamCaption}
+\item[{{\bf State\+Manager} $\ast$}]{in\+State\+Manager, }
 \item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{in\+Renderer, }
 \item[{int}]{in\+Width, }
 \item[{int}]{in\+Height}
 \end{DoxyParamCaption}
-)}}\label{class_game_aa16f7f0fe07387c1fda7f27858b2ff66}
-Constructs an \hyperlink{class_game}{Game} object Constructs the \hyperlink{class_game}{Game} object 
+)}}\label{class_game_a152727bb1c8f9af5cf824cd4ddbb055b}
+Constructs an \hyperlink{class_game}{Game} object 
 \begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_state_manager}{State\+Manager}} & $\ast$ a pointer to the \hyperlink{class_state_manager}{State\+Manager} \\
+\hline
 {\em S\+D\+L\+\_\+\+Renderer} & $\ast$ a pointer to the renderer \\
 \hline
 {\em int} & the screen width \\
@@ -64,7 +78,7 @@ Constructs an \hyperlink{class_game}{Game} object Constructs the \hyperlink{clas
 {}
 \end{DoxyParamCaption}
 )}}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}
-De-\/constructs an \hyperlink{class_game}{Game} object De-\/constructs the \hyperlink{class_game}{Game} object 
+Destructs an \hyperlink{class_game}{Game} object 
 
 \subsection{Member Function Documentation}
 \hypertarget{class_game_a6d54497ce3a66f6dd45eacfdccc8d0bd}{\index{Game@{Game}!draw@{draw}}
@@ -73,32 +87,41 @@ De-\/constructs an \hyperlink{class_game}{Game} object De-\/constructs the \hype
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_game_a6d54497ce3a66f6dd45eacfdccc8d0bd}
-Draws the \hyperlink{class_game}{Game} object \hypertarget{class_game_a6e3ee4ac1c5ee591527cd13cfb4cfab2}{\index{Game@{Game}!input@{input}}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_game_a6d54497ce3a66f6dd45eacfdccc8d0bd}
+A function to draw to the screen 
+
+Implements \hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State}.
+
+\hypertarget{class_game_a6e3ee4ac1c5ee591527cd13cfb4cfab2}{\index{Game@{Game}!input@{input}}
 \index{input@{input}!Game@{Game}}
 \subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+::input (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_game_a6e3ee4ac1c5ee591527cd13cfb4cfab2}
-Handles the game input \begin{DoxyReturn}{Returns}
-bool if false the quit game 
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_game_a6e3ee4ac1c5ee591527cd13cfb4cfab2}
+Handles the \hyperlink{class_game}{Game} input \begin{DoxyReturn}{Returns}
+bool if false the quit the \hyperlink{class_game}{Game} \hyperlink{class_state}{State} 
 \end{DoxyReturn}
-\hypertarget{class_game_a34db1b512678bf1bf0bd8e0d56723b18}{\index{Game@{Game}!update@{update}}
+
+
+Implements \hyperlink{class_state_ac0dcfe3db8d012b37e6935f4f805ece7}{State}.
+
+\hypertarget{class_game_a419466336fad97182f5051e11f541636}{\index{Game@{Game}!update@{update}}
 \index{update@{update}!Game@{Game}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::update (
 \begin{DoxyParamCaption}
-\item[{float}]{dt}
+\item[{float}]{delta\+Time}
 \end{DoxyParamCaption}
-)}}\label{class_game_a34db1b512678bf1bf0bd8e0d56723b18}
-Update the \hyperlink{class_game}{Game} object 
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_game_a419466336fad97182f5051e11f541636}
+A function to update the \hyperlink{class_game}{Game} A function to update the \hyperlink{class_game}{Game} to allow the \hyperlink{class_game}{Game} to run 
 \begin{DoxyParams}{Parameters}
-{\em float} & the delta\+Time \\
+{\em float} & the delta time \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-bool if false the quit game 
-\end{DoxyReturn}
+
+
+Implements \hyperlink{class_state_a8f582ba039a10fff9712b6a21ef22808}{State}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

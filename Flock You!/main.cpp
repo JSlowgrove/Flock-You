@@ -2,6 +2,7 @@
 #include <SDL_ttf.h>
 #include <SDL_mixer.h>
 #include <iostream>
+#include "stateManager.h"
 #include "game.h"
 
 int main(int argc, char *argv[])
@@ -45,8 +46,10 @@ int main(int argc, char *argv[])
 	/*Create Renderer from the window*/
 	SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, 0);
 
-	/*Create Game*/
-	Game * game = new Game(renderer, winWidth, winHeight);
+	/*setup state manager*/
+	StateManager * stateManager = new StateManager();
+	/*set the initial state*/
+	stateManager->addState(new Game(stateManager, renderer, winWidth, winHeight));
 
 	/*Start Game Loop*/
 	bool go = true;
@@ -57,18 +60,14 @@ int main(int argc, char *argv[])
 		float deltaTime = (float)(current - lastTime) / 1000.0f;
 		lastTime = current;
 
-		/*handle the inputs to the game*/
-		go = game->input();
+		/*handle the current state inputs*/
+		go = stateManager->input();
 
-		/*check if the game is able to continue*/
-		if (go)
-		{ 
-			/*update the game if not to be exited*/
-			go = game->update(deltaTime);
-		}
+		/*update the current state*/
+		stateManager->update(deltaTime);
 
-		/*draw the game*/
-		game->draw();
+		/*draw the states*/
+		stateManager->draw();
 
 		/*Time Limiter*/
 		if (deltaTime < (1.0f / 50.0f))
@@ -77,9 +76,8 @@ int main(int argc, char *argv[])
 		}
 	}
 	/*destroy data*/
-	delete game;
+	delete stateManager;
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-
-	return 0;
+	return -1;
 }
