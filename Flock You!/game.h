@@ -45,6 +45,19 @@ private:
 	*/
 	Vec2 rule3(int);
 
+	/**
+	Applies Boid rough boundaries
+	@param int the index of the Boid to test
+	@returns Vec2 the resultant velocity of the boundary
+	*/
+	Vec2 roughBoundaries(int);
+
+	/**
+	Limits the Boid velocity
+	@param int the index of the Boid to test
+	*/
+	void limitVelocity(int);
+
 public:
 	/**
 	Constructs an Game object

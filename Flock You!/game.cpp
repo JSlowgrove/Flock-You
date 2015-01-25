@@ -101,6 +101,7 @@ void Game::update(float dt)
 	Vec2 v1 = { 0.0f, 0.0f };
 	Vec2 v2 = { 0.0f, 0.0f };
 	Vec2 v3 = { 0.0f, 0.0f };
+	Vec2 v4 = { 0.0f, 0.0f };
 
 	/*test each Boid*/
 	for (unsigned int i = 0; i < boids.size(); i++)
@@ -121,8 +122,13 @@ void Game::update(float dt)
 			v3 = rule3(i);
 		}
 
+		/*apply boundaries*/
+		v4 = roughBoundaries(i);
+
 		/*update the Boid velocity*/
-		boids[i]->setVelocity(boids[i]->getVelocity() + v1 + v2 + v3);
+		boids[i]->setVelocity(boids[i]->getVelocity() + v1 + v2 + v3 + v4);
+		/*limit the velocity of the Boid*/
+		limitVelocity(i);
 		/*update the Boid position*/
 		boids[i]->setPosition(boids[i]->getPosition() + boids[i]->getVelocity());
 	}
@@ -188,6 +194,28 @@ Vec2 Game::rule2(int boidIndex)
 {
 	/*the new velocity*/
 	Vec2 vel = { 0.0f, 0.0f };
+
+	/*test each Boid*/
+	for (unsigned int i = 0; i < boids.size(); i++)
+	{
+		/*if the Boid to be tested is not the inputed Boid*/
+		if (i != boidIndex)
+		{
+			/*if the Boid is closer than 10 pixels to another Boid on the x axis (using absolute values)*/
+			if (std::abs(boids[boidIndex]->getPosition().x - boids[i]->getPosition().x) < 10)
+			{
+				vel.x = vel.x - (boids[i]->getPosition().x - boids[boidIndex]->getPosition().x);
+			}
+
+			/*if the Boid is closer than 10 pixels to another Boid on the y axis (using absolute values)*/
+			if (std::abs(boids[boidIndex]->getPosition().y - boids[i]->getPosition().y) < 10)
+			{
+				vel.y = vel.y - (boids[i]->getPosition().y - boids[boidIndex]->getPosition().y);
+			}
+		}
+	}
+
+	/*return the new velocity*/
 	return vel;
 }
 
@@ -199,4 +227,69 @@ Vec2 Game::rule3(int boidIndex)
 	/*the new velocity*/
 	Vec2 vel = { 0.0f, 0.0f };
 	return vel;
+}
+
+/**************************************************************************************************************/
+
+/*applies Boid rough boundaries*/
+Vec2 Game::roughBoundaries(int boidIndex)
+{
+	/*initialise the new velocity*/
+	Vec2 vel = { 0.0f, 0.0f };
+
+	/*check if the Boid is off the right of the screen*/
+	if (boids[boidIndex]->getPosition().x > screenWidth)
+	{
+		/*set a negative x velocity*/
+		vel.x = -10.0f;
+	}
+	/*check if the Boid is off the right of the screen*/
+	else if (boids[boidIndex]->getPosition().x < 0)
+	{
+		/*set a positive x velocity*/
+		vel.x = 10.0f;
+	}
+
+	/*check if the Boid is off the bottom of the screen*/
+	if (boids[boidIndex]->getPosition().y > screenHeight)
+	{
+		/*set a negative y velocity*/
+		vel.y = -10.0f;
+	}
+	/*check if the Boid is off the top of the screen*/
+	else if (boids[boidIndex]->getPosition().y < 0)
+	{
+		/*set a positive y velocity*/
+		vel.y = 10.0f;
+	}
+
+	/*return the new velocity*/
+	return vel;
+}
+
+/**************************************************************************************************************/
+
+/*limit the velocity of the Boid*/
+void Game::limitVelocity(int boidIndex)
+{
+	/*the max velocity*/
+	float maxVel = 25.0f;
+
+	/*test if the absolute of the x velocity is greater than the max velocity*/
+	if (std::abs(boids[boidIndex]->getVelocity().x) > maxVel)
+	{
+		/*work out if negative or positive*/
+		float sign = boids[boidIndex]->getVelocity().x / std::abs(boids[boidIndex]->getVelocity().x);
+		/*set the x velocity to the max velocity*/
+		boids[boidIndex]->setVelocity(Vec2(maxVel * sign, boids[boidIndex]->getVelocity().y));
+	}
+
+	/*test if the absolute of the y velocity is greater than the max velocity*/
+	if (std::abs(boids[boidIndex]->getVelocity().y) > maxVel)
+	{
+		/*work out if negative or positive*/
+		float sign = boids[boidIndex]->getVelocity().y / std::abs(boids[boidIndex]->getVelocity().y);
+		/*set the y velocity to the max velocity*/
+		boids[boidIndex]->setVelocity(Vec2(boids[boidIndex]->getVelocity().x, maxVel * sign));
+	}
 }
