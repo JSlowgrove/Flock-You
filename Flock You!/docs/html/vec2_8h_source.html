@@ -153,6 +153,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    c.y = a.y / b;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> c;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">inline</span> <a class="code" href="struct_vec2.html">Vec2</a> operator * (<a class="code" href="struct_vec2.html">Vec2</a> a, <span class="keywordtype">float</span> b)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="struct_vec2.html">Vec2</a> c;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    c.x = a.x * b;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    c.y = a.y * b;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="ttc" id="struct_vec2_html_a76080feed7005893ecc634f903cfbae0"><div class="ttname"><a href="struct_vec2.html#a76080feed7005893ecc634f903cfbae0">Vec2::Vec2</a></div><div class="ttdeci">Vec2()</div><div class="ttdef"><b>Definition:</b> vec2.h:17</div></div>
 <div class="ttc" id="struct_vec2_html"><div class="ttname"><a href="struct_vec2.html">Vec2</a></div><div class="ttdoc">Creates an Vec2 structure with functions Creates an Vec2 structure with overloaded operators to creat...</div><div class="ttdef"><b>Definition:</b> vec2.h:7</div></div>
 <div class="ttc" id="struct_vec2_html_a00055ba3b91ef5faeaeb12a4289572f6"><div class="ttname"><a href="struct_vec2.html#a00055ba3b91ef5faeaeb12a4289572f6">Vec2::operator+=</a></div><div class="ttdeci">Vec2 * operator+=(Vec2 a)</div><div class="ttdef"><b>Definition:</b> vec2.h:40</div></div>
@@ -161,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 25 2015 02:48:21 for Flock You! by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 25 2015 03:37:18 for Flock You! by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

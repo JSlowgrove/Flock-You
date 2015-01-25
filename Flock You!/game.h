@@ -21,8 +21,8 @@ private:
 	Texture * whiteSquare;
 	/*a vector of Boid objects*/
 	std::vector<Boid*> boids;
-	/*Is a Rule active?*/
-	bool applyRule1, applyRule2, applyRule3;
+	/*What to do with the rule (1 == possitve, 0 = neutral, -1 == negative)*/
+	int applyRule1, applyRule2, applyRule3;
 
 	/**
 	Applies Boid Rule 1

@@ -16,8 +16,8 @@ Game::Game(StateManager * inStateManager, SDL_Renderer* inRenderer, int inWidth,
 		/*creates a Boid at a random position on the screen*/
 		boids.push_back(new Boid(whiteSquare, Vec2((float)(rand() % 608), (float)(rand() % 448)), Vec2(4.0f, 4.0f)));
 	}
-	/*initialise all of the rules to be off*/
-	applyRule1 = applyRule2 = applyRule3 = false;
+	/*initialise all of the rules to be on*/
+	applyRule1 = applyRule2 = applyRule3 = 1;
 }
 
 /**************************************************************************************************************/
@@ -60,31 +60,52 @@ bool Game::input()
 			case SDLK_RETURN: /*If Enter is pressed all rules are active*/
 
 				/*activate all rules*/
-				applyRule1 = applyRule2 = applyRule3 = true;
+				applyRule1 = applyRule2 = applyRule3 = 1;
 				break;
 
 			case SDLK_1: /*If 1 is pressed only rule 1 is active*/
 
 				/*activate rule 1*/
-				applyRule1 = true;
+				applyRule1 = 1;
 				/*deactivate all other rules*/
-				applyRule2 = applyRule3 = false;
+				applyRule2 = applyRule3 = 0;
 				break;
 
 			case SDLK_2: /*If 2 is pressed only rule 2 is active*/
 
 				/*activate rule 2*/
-				applyRule2 = true;
+				applyRule2 = 1;
 				/*deactivate all other rules*/
-				applyRule1 = applyRule3 = false;
+				applyRule1 = applyRule3 = 0;
 				break;
 
 			case SDLK_3: /*If 3 is pressed only rule 3 is active*/
 
 				/*activate rule3*/
-				applyRule3 = true;
+				applyRule3 = 1;
 				/*deactivate all other rules*/
-				applyRule1 = applyRule2 = false;
+				applyRule1 = applyRule2 = 0;
+				break;
+
+			case SDLK_SPACE: /*If Space is pressed scatter the flock*/
+
+				/*activate rule 2 and 3*/
+				applyRule2 = applyRule3 = 1;
+				/*invert rule 1*/
+				applyRule1 = -1;
+				break;
+			}
+			break;
+
+		case SDL_KEYUP:
+
+			switch (incomingEvent.key.keysym.sym)
+			{
+
+			case SDLK_SPACE: /*If Space is released activate all rules*/
+
+				/*activate all rules*/
+				applyRule1 = applyRule2 = applyRule3 = 1;
 				break;
 			}
 		}
@@ -106,21 +127,12 @@ void Game::update(float dt)
 	/*test each Boid*/
 	for (unsigned int i = 0; i < boids.size(); i++)
 	{
-		/*test rule 1 if active*/
-		if (applyRule1)
-		{
-			v1 = rule1(i);
-		}
-		/*test rule 2 if active*/
-		if (applyRule2)
-		{
-			v2 = rule2(i);
-		}
-		/*test rule 3 if active*/
-		if (applyRule3)
-		{
-			v3 = rule3(i);
-		}
+		/*test rule 1 and apply activity*/
+		v1 = (rule1(i) * applyRule1);
+		/*test rule 2 and apply activity*/
+		v2 = (rule2(i) * applyRule2);
+		/*test rule 3 and apply activity*/
+		v3 = (rule3(i) * applyRule3);
 
 		/*apply boundaries*/
 		v4 = roughBoundaries(i);
@@ -224,8 +236,27 @@ Vec2 Game::rule2(int boidIndex)
 /*applies Boid rule 3*/
 Vec2 Game::rule3(int boidIndex)
 {
-	/*the new velocity*/
+	/*initialise the new velocity*/
 	Vec2 vel = { 0.0f, 0.0f };
+
+	/*test each Boid*/
+	for (unsigned int i = 0; i < boids.size(); i++)
+	{
+		/*if the Boid to be tested is not the inputed Boid*/
+		if (i != boidIndex)
+		{
+			/*add all of the Boid velocities together*/
+			vel = vel + boids[i]->getVelocity();
+		}
+	}
+
+	/*get the average velocity*/
+	vel = vel / (boids.size() - 2);
+
+	/*set it to about an eighth of the Boid velocity*/
+	vel = (vel - boids[boidIndex]->getVelocity()) / 8;
+
+	/*return the new velocity*/
 	return vel;
 }
 

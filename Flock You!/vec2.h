@@ -112,3 +112,17 @@ inline Vec2 operator / (Vec2 a, float b)
 	c.y = a.y / b;
 	return c;
 }
+
+/**
+Overloads the * operator
+Overloads the * operator allowing a Vec2 to be multiplied by a scalar
+@param Vec2 One of the input Vec2's
+@param float the scalar to multiply by
+*/
+inline Vec2 operator * (Vec2 a, float b)
+{
+	Vec2 c;
+	c.x = a.x * b;
+	c.y = a.y * b;
+	return c;
+}

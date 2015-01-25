@@ -1,0 +1,11 @@
+Commands:
+-Press enter to apply all rules.
+-Press 1 to apply rule 1 only.
+-Press 2 to apply rule 2 only.
+-Press 3 to apply rule 3 only.
+-Hold Space to scatter the flock
+
+Rules:
+-Rule 1 = Boids try to fly towards the centre of mass of neighbouring boids.
+-Rule 2 = Boids try to keep a small distance away from other objects (including other boids).
+-Rule 3 = Boids try to match velocity with near boids.
