@@ -17,6 +17,9 @@ private:
 	Vec2 position;
 	/*The Boid scale*/
 	Vec2 scale;
+	/*The Boid velocity*/
+	Vec2 velocity;
+
 public:
 	/**
 	Constructs an Boid object
@@ -54,6 +57,18 @@ public:
 	@returns Vec2 the scale
 	*/
 	Vec2 getScale();
+
+	/**
+	Setter # sets the velocity
+	@param Vec2 the new velocity
+	*/
+	void setVelocity(Vec2);
+
+	/**
+	Getter # gets the velocity
+	@returns Vec2 the velocity
+	*/
+	Vec2 getVelocity();
 
 	/**
 	Displays the Boid

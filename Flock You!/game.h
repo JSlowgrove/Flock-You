@@ -12,6 +12,7 @@
 /**
 @brief Creates an Game object that inherits State
 Creates an Game object that inherits State and runs the Game.
+DISCLAMER: Created using Pseudo code from https://www.macs.hw.ac.uk/~dwcorne/Teaching/Boids%20Pseudocode.htm
 */
 class Game : public State
 {
@@ -20,6 +21,28 @@ private:
 	Texture * whiteSquare;
 	/*a vector of Boid objects*/
 	std::vector<Boid*> boids;
+
+	/**
+	Applies Boid Rule 1
+	@param Boid * a pointer to the Boid to test
+	@returns Vec2 the resultant velocity of the rule
+	*/
+	Vec2 rule1(Boid *);
+
+	/**
+	Applies Boid Rule 2
+	@param Boid * a pointer to the Boid to test
+	@returns Vec2 the resultant velocity of the rule
+	*/
+	Vec2 rule2(Boid *);
+
+	/**
+	Applies Boid Rule 3
+	@param Boid * a pointer to the Boid to test
+	@returns Vec2 the resultant velocity of the rule
+	*/
+	Vec2 rule3(Boid *);
+
 public:
 	/**
 	Constructs an Game object

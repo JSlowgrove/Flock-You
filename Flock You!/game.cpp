@@ -23,7 +23,11 @@ Game::Game(StateManager * inStateManager, SDL_Renderer* inRenderer, int inWidth,
 /*Destructs the game object*/
 Game::~Game()
 {
-	
+	/*delete pointers*/
+	for (unsigned int i = 0; i < boids.size(); i++)
+	{
+		delete boids[i];
+	}
 }
 
 /**************************************************************************************************************/
@@ -61,6 +65,24 @@ bool Game::input()
 /*updates the game*/
 void Game::update(float dt)
 {
+	/*the resultant velocities*/
+	Vec2 v1, v2, v3;
+
+	/*test each Boid*/
+	for (unsigned int i = 0; i < boids.size(); i++)
+	{
+		/*test rule 1*/
+		v1 = rule1(boids[i]);
+		/*test rule 2*/
+		v2 = rule2(boids[i]);
+		/*test rule 3*/
+		v3 = rule3(boids[i]);
+
+		/*update the Boid velocity*/
+		boids[i]->setVelocity(boids[i]->getVelocity() + v1 + v2 + v3);
+		/*update the Boid position*/
+		boids[i]->setPosition(boids[i]->getPosition() + boids[i]->getVelocity());
+	}
 }
 
 /**************************************************************************************************************/
@@ -83,4 +105,34 @@ void Game::draw()
 
 	/*display renderer*/
 	SDL_RenderPresent(renderer);
+}
+
+/**************************************************************************************************************/
+
+/*applies Boid rule 1*/
+Vec2 Game::rule1(Boid * boid)
+{
+	/*the new velocity*/
+	Vec2 vel = { 0.0f, 0.0f};
+	return vel;
+}
+
+/**************************************************************************************************************/
+
+/*applies Boid rule 2*/
+Vec2 Game::rule2(Boid * boid)
+{
+	/*the new velocity*/
+	Vec2 vel = { 0.0f, 0.0f };
+	return vel;
+}
+
+/**************************************************************************************************************/
+
+/*applies Boid rule 3*/
+Vec2 Game::rule3(Boid * boid)
+{
+	/*the new velocity*/
+	Vec2 vel = { 0.0f, 0.0f };
+	return vel;
 }

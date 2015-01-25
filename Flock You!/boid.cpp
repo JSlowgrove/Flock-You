@@ -11,6 +11,8 @@ Boid::Boid(Texture * inTexture, Vec2 inPosition, Vec2 inScale)
 	position = inPosition;
 	/*initialise the scale*/
 	scale = inScale;
+	/*initialise velocity*/
+	velocity = Vec2(0.0f, 0.0f);
 }
 
 /**************************************************************************************************************/
@@ -63,4 +65,22 @@ void Boid::display(SDL_Renderer* renderer)
 {
 	/*push the texture to the screen using the Boid information*/
 	texture->pushToScreen(renderer, (int)position.x, (int)position.y, (int) scale.x, (int) scale.y);
+}
+
+/**************************************************************************************************************/
+
+/*sets the velocity*/
+void Boid::setVelocity(Vec2 inVelocity)
+{
+	/*sets the new velocity*/
+	velocity = inVelocity;
+}
+
+/**************************************************************************************************************/
+
+/*gets the velocity*/
+Vec2 Boid::getVelocity()
+{
+	/*returns the velocity*/
+	return velocity;
 }

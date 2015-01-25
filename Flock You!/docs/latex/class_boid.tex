@@ -12,7 +12,8 @@ Creates an \hyperlink{class_boid}{Boid} object Creates an \hyperlink{class_boid}
 
 
 
-Collaboration diagram for Boid\+:\nopagebreak
+Collaboration diagram for Boid\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,6 +34,10 @@ void \hyperlink{class_boid_a62ebe99b4a19edfc2d0a6f1ac58e9658}{set\+Position} (\h
 void \hyperlink{class_boid_a4443fb5d1fb425b9fede21c3cee2ba84}{set\+Scale} (\hyperlink{struct_vec2}{Vec2})
 \item 
 \hyperlink{struct_vec2}{Vec2} \hyperlink{class_boid_a3a5d507c214ebd3bf9eda04e2157c4b5}{get\+Scale} ()
+\item 
+void \hyperlink{class_boid_a8f59ceb20ee2f35705ddd1984d98d5c5}{set\+Velocity} (\hyperlink{struct_vec2}{Vec2})
+\item 
+\hyperlink{struct_vec2}{Vec2} \hyperlink{class_boid_a3af03753fdadf91e23acd64fb59968c1}{get\+Velocity} ()
 \item 
 void \hyperlink{class_boid_ad522fbcf60e6e318c785ca7b04091472}{display} (S\+D\+L\+\_\+\+Renderer $\ast$)
 \end{DoxyCompactItemize}
@@ -113,6 +118,16 @@ Getter \# gets the position \begin{DoxyReturn}{Returns}
 Getter \# gets the scale \begin{DoxyReturn}{Returns}
 \hyperlink{struct_vec2}{Vec2} the scale 
 \end{DoxyReturn}
+\hypertarget{class_boid_a3af03753fdadf91e23acd64fb59968c1}{\index{Boid@{Boid}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!Boid@{Boid}}
+\subsubsection[{get\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec2} Boid\+::get\+Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_boid_a3af03753fdadf91e23acd64fb59968c1}
+Getter \# gets the velocity \begin{DoxyReturn}{Returns}
+\hyperlink{struct_vec2}{Vec2} the velocity 
+\end{DoxyReturn}
 \hypertarget{class_boid_a62ebe99b4a19edfc2d0a6f1ac58e9658}{\index{Boid@{Boid}!set\+Position@{set\+Position}}
 \index{set\+Position@{set\+Position}!Boid@{Boid}}
 \subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Boid\+::set\+Position (
@@ -135,6 +150,18 @@ Setter \# sets the position
 Setter \# sets the scale 
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{struct_vec2}{Vec2}} & the new scale \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_boid_a8f59ceb20ee2f35705ddd1984d98d5c5}{\index{Boid@{Boid}!set\+Velocity@{set\+Velocity}}
+\index{set\+Velocity@{set\+Velocity}!Boid@{Boid}}
+\subsubsection[{set\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Boid\+::set\+Velocity (
+\begin{DoxyParamCaption}
+\item[{{\bf Vec2}}]{in\+Velocity}
+\end{DoxyParamCaption}
+)}}\label{class_boid_a8f59ceb20ee2f35705ddd1984d98d5c5}
+Setter \# sets the velocity 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_vec2}{Vec2}} & the new velocity \\
 \hline
 \end{DoxyParams}
 

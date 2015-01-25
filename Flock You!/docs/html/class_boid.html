@@ -97,6 +97,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for Boid:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_boid__coll__graph.png" border="0" usemap="#_boid_coll__map" alt="Collaboration graph"/></div>
+<map name="_boid_coll__map" id="_boid_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -113,6 +115,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4443fb5d1fb425b9fede21c3cee2ba84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a5d507c214ebd3bf9eda04e2157c4b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boid.html#a3a5d507c214ebd3bf9eda04e2157c4b5">getScale</a> ()</td></tr>
 <tr class="separator:a3a5d507c214ebd3bf9eda04e2157c4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f59ceb20ee2f35705ddd1984d98d5c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boid.html#a8f59ceb20ee2f35705ddd1984d98d5c5">setVelocity</a> (<a class="el" href="struct_vec2.html">Vec2</a>)</td></tr>
+<tr class="separator:a8f59ceb20ee2f35705ddd1984d98d5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af03753fdadf91e23acd64fb59968c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boid.html#a3af03753fdadf91e23acd64fb59968c1">getVelocity</a> ()</td></tr>
+<tr class="separator:a3af03753fdadf91e23acd64fb59968c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad522fbcf60e6e318c785ca7b04091472"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boid.html#ad522fbcf60e6e318c785ca7b04091472">display</a> (SDL_Renderer *)</td></tr>
 <tr class="separator:ad522fbcf60e6e318c785ca7b04091472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -239,6 +245,22 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a3af03753fdadf91e23acd64fb59968c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vec2.html">Vec2</a> Boid::getVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getter # gets the velocity </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_vec2.html" title="Creates an Vec2 structure with functions Creates an Vec2 structure with overloaded operators to creat...">Vec2</a> the velocity </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a62ebe99b4a19edfc2d0a6f1ac58e9658"></a>
 <div class="memitem">
 <div class="memproto">
@@ -283,6 +305,28 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a8f59ceb20ee2f35705ddd1984d98d5c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Boid::setVelocity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&#160;</td>
+          <td class="paramname"><em>inVelocity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Setter # sets the velocity </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_vec2.html" title="Creates an Vec2 structure with functions Creates an Vec2 structure with overloaded operators to creat...">Vec2</a></td><td>the new velocity </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Flock You!/<a class="el" href="boid_8h_source.html">boid.h</a></li>
 <li>Flock You!/boid.cpp</li>
@@ -290,7 +334,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 17 2015 14:48:46 for Flock You! by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 25 2015 01:36:18 for Flock You! by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

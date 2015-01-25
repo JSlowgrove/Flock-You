@@ -5,5 +5,6 @@ var searchData=
   ['getposition',['getPosition',['../class_boid.html#a4f21bfa041637ffcce13c56764fd3c9f',1,'Boid']]],
   ['getscale',['getScale',['../class_boid.html#a3a5d507c214ebd3bf9eda04e2157c4b5',1,'Boid']]],
   ['gettexture',['getTexture',['../class_texture.html#a77a1ae0043a4b318a60df3b02ef2d3f6',1,'Texture']]],
+  ['getvelocity',['getVelocity',['../class_boid.html#a3af03753fdadf91e23acd64fb59968c1',1,'Boid']]],
   ['getwidth',['getWidth',['../class_texture.html#a91a6fd3355bc870194851514194daaab',1,'Texture']]]
 ];
