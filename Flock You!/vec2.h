@@ -98,3 +98,17 @@ inline Vec2 operator - (Vec2 a, Vec2 b)
 	c.y = a.y - b.y;
 	return c;
 }
+
+/**
+Overloads the / operator
+Overloads the / operator allowing a Vec2 to be divided by a scalar
+@param Vec2 One of the input Vec2's
+@param float the scalar to divide by
+*/
+inline Vec2 operator / (Vec2 a, float b)
+{
+	Vec2 c;
+	c.x = a.x / b;
+	c.y = a.y / b;
+	return c;
+}

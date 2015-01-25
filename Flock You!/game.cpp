@@ -16,6 +16,8 @@ Game::Game(StateManager * inStateManager, SDL_Renderer* inRenderer, int inWidth,
 		/*creates a Boid at a random position on the screen*/
 		boids.push_back(new Boid(whiteSquare, Vec2((float)(rand() % 608), (float)(rand() % 448)), Vec2(4.0f, 4.0f)));
 	}
+	/*initialise all of the rules to be off*/
+	applyRule1 = applyRule2 = applyRule3 = false;
 }
 
 /**************************************************************************************************************/
@@ -54,6 +56,36 @@ bool Game::input()
 
 				return false;
 				break;
+
+			case SDLK_RETURN: /*If Enter is pressed all rules are active*/
+
+				/*activate all rules*/
+				applyRule1 = applyRule2 = applyRule3 = true;
+				break;
+
+			case SDLK_1: /*If 1 is pressed only rule 1 is active*/
+
+				/*activate rule 1*/
+				applyRule1 = true;
+				/*deactivate all other rules*/
+				applyRule2 = applyRule3 = false;
+				break;
+
+			case SDLK_2: /*If 2 is pressed only rule 2 is active*/
+
+				/*activate rule 2*/
+				applyRule2 = true;
+				/*deactivate all other rules*/
+				applyRule1 = applyRule3 = false;
+				break;
+
+			case SDLK_3: /*If 3 is pressed only rule 3 is active*/
+
+				/*activate rule3*/
+				applyRule3 = true;
+				/*deactivate all other rules*/
+				applyRule1 = applyRule2 = false;
+				break;
 			}
 		}
 	}
@@ -65,18 +97,29 @@ bool Game::input()
 /*updates the game*/
 void Game::update(float dt)
 {
-	/*the resultant velocities*/
-	Vec2 v1, v2, v3;
+	/*initialise the resultant velocities*/
+	Vec2 v1 = { 0.0f, 0.0f };
+	Vec2 v2 = { 0.0f, 0.0f };
+	Vec2 v3 = { 0.0f, 0.0f };
 
 	/*test each Boid*/
 	for (unsigned int i = 0; i < boids.size(); i++)
 	{
-		/*test rule 1*/
-		v1 = rule1(boids[i]);
-		/*test rule 2*/
-		v2 = rule2(boids[i]);
-		/*test rule 3*/
-		v3 = rule3(boids[i]);
+		/*test rule 1 if active*/
+		if (applyRule1)
+		{
+			v1 = rule1(i);
+		}
+		/*test rule 2 if active*/
+		if (applyRule2)
+		{
+			v2 = rule2(i);
+		}
+		/*test rule 3 if active*/
+		if (applyRule3)
+		{
+			v3 = rule3(i);
+		}
 
 		/*update the Boid velocity*/
 		boids[i]->setVelocity(boids[i]->getVelocity() + v1 + v2 + v3);
@@ -110,17 +153,38 @@ void Game::draw()
 /**************************************************************************************************************/
 
 /*applies Boid rule 1*/
-Vec2 Game::rule1(Boid * boid)
+Vec2 Game::rule1(int boidIndex)
 {
-	/*the new velocity*/
-	Vec2 vel = { 0.0f, 0.0f};
+	/*initialise the new velocity*/
+	Vec2 vel = { 0.0f, 0.0f };
+	/*initialise the center of mass*/
+	Vec2 cOfM = { 0.0f, 0.0f };
+
+	/*test each Boid*/
+	for (unsigned int i = 0; i < boids.size(); i++)
+	{
+		/*if the Boid to be tested is not the inputed Boid*/
+		if (i != boidIndex)
+		{
+			/*update the center of mass*/
+			cOfM = boids[i]->getPosition() + cOfM;
+		}
+	}
+
+	/*divide the center of mass by the number of Boid objects tested*/
+	cOfM = cOfM / (boids.size() - 2);
+
+	/*set the new velocity to the amount to move towards the Boid (1% of the distance in this case)*/
+	vel = (cOfM - boids[boidIndex]->getPosition()) / 100;
+
+	/*return the new velocity*/
 	return vel;
 }
 
 /**************************************************************************************************************/
 
 /*applies Boid rule 2*/
-Vec2 Game::rule2(Boid * boid)
+Vec2 Game::rule2(int boidIndex)
 {
 	/*the new velocity*/
 	Vec2 vel = { 0.0f, 0.0f };
@@ -130,7 +194,7 @@ Vec2 Game::rule2(Boid * boid)
 /**************************************************************************************************************/
 
 /*applies Boid rule 3*/
-Vec2 Game::rule3(Boid * boid)
+Vec2 Game::rule3(int boidIndex)
 {
 	/*the new velocity*/
 	Vec2 vel = { 0.0f, 0.0f };

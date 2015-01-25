@@ -21,27 +21,29 @@ private:
 	Texture * whiteSquare;
 	/*a vector of Boid objects*/
 	std::vector<Boid*> boids;
+	/*Is a Rule active?*/
+	bool applyRule1, applyRule2, applyRule3;
 
 	/**
 	Applies Boid Rule 1
-	@param Boid * a pointer to the Boid to test
+	@param int the index of the Boid to test
 	@returns Vec2 the resultant velocity of the rule
 	*/
-	Vec2 rule1(Boid *);
+	Vec2 rule1(int);
 
 	/**
 	Applies Boid Rule 2
-	@param Boid * a pointer to the Boid to test
+	@param int the index of the Boid to test
 	@returns Vec2 the resultant velocity of the rule
 	*/
-	Vec2 rule2(Boid *);
+	Vec2 rule2(int);
 
 	/**
 	Applies Boid Rule 3
-	@param Boid * a pointer to the Boid to test
+	@param int the index of the Boid to test
 	@returns Vec2 the resultant velocity of the rule
 	*/
-	Vec2 rule3(Boid *);
+	Vec2 rule3(int);
 
 public:
 	/**
