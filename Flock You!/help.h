@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include "state.h"
 #include "stateManager.h"
+#include "audio.h"
 #include "text.h"
 #include "game.h"
 

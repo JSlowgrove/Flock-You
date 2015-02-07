@@ -51,6 +51,10 @@ int main(int argc, char *argv[])
 	/*set the initial state*/
 	stateManager->addState(new Game(stateManager, renderer, winWidth, winHeight));
 
+	/*initialise and start the music*/
+	Audio * music = new Audio("aud/Long Time Coming.ogg", true);
+	music->startAudio();
+
 	/*Start Game Loop*/
 	bool go = true;
 	while (go)
@@ -59,6 +63,9 @@ int main(int argc, char *argv[])
 		unsigned int current = SDL_GetTicks();
 		float deltaTime = (float)(current - lastTime) / 1000.0f;
 		lastTime = current;
+
+		/*check the music is still playing if not start again*/
+		music->startAudio();
 
 		/*handle the current state inputs*/
 		go = stateManager->input();
@@ -75,6 +82,10 @@ int main(int argc, char *argv[])
 			SDL_Delay((unsigned int)(((1.0f / 50.0f) - deltaTime)*1000.0f));
 		}
 	}
+	/*stop music*/
+	music->stopAudio();
+	/*delete audio pointers*/
+	delete music;
 	/*destroy data*/
 	delete stateManager;
 	SDL_DestroyWindow(window);

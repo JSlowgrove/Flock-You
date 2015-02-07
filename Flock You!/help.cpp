@@ -21,7 +21,6 @@ Help::Help(StateManager * inStateManager, SDL_Renderer* inRenderer, int inWidth,
 	text.push_back(new Text("-Rule 2 = Boids try to keep a small distance away from other", "font/Underdog_tt_hinted.ttf", renderer, 102, 51, 153));
 	text.push_back(new Text("objects (including other boids).", "font/Underdog_tt_hinted.ttf", renderer, 102, 51, 153));
 	text.push_back(new Text("-Rule 3 = Boids try to match velocity with near boids.", "font/Underdog_tt_hinted.ttf", renderer, 102, 51, 153));
-
 }
 
 /**************************************************************************************************************/

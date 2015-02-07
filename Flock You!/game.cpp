@@ -20,8 +20,7 @@ Game::Game(StateManager * inStateManager, SDL_Renderer* inRenderer, int inWidth,
 	applyRule1 = applyRule2 = applyRule3 = 1;
 	/*initialise the text*/
 	text.push_back(new Text("Hit Delete to Quit", "font/Underdog_tt_hinted.ttf", renderer, 0, 0, 0));
-	text.push_back(new Text("Hit Escape for Help", "font/Underdog_tt_hinted.ttf", renderer, 0, 0, 0));
-	
+	text.push_back(new Text("Hit Escape for Help", "font/Underdog_tt_hinted.ttf", renderer, 0, 0, 0));	
 }
 
 /**************************************************************************************************************/
