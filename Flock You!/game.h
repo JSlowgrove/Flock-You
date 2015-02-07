@@ -6,8 +6,10 @@
 #include "state.h"
 #include "stateManager.h"
 #include "texture.h"
+#include "text.h"
 #include "audio.h"
 #include "boid.h"
+#include "help.h"
 
 /**
 @brief Creates an Game object that inherits State
@@ -23,6 +25,8 @@ private:
 	std::vector<Boid*> boids;
 	/*What to do with the rule (1 == possitve, 0 = neutral, -1 == negative)*/
 	int applyRule1, applyRule2, applyRule3;
+	/*rendered text*/
+	std::vector<Text *> text;
 
 	/**
 	Applies Boid Rule 1

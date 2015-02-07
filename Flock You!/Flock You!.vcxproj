@@ -84,8 +84,10 @@
     <ClInclude Include="audio.h" />
     <ClInclude Include="boid.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="help.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="stateManager.h" />
+    <ClInclude Include="text.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="vec2.h" />
   </ItemGroup>
@@ -93,9 +95,11 @@
     <ClCompile Include="audio.cpp" />
     <ClCompile Include="boid.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="help.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="state.cpp" />
     <ClCompile Include="stateManager.cpp" />
+    <ClCompile Include="text.cpp" />
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
