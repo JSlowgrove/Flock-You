@@ -1,4 +1,0 @@
-<map id="Game" name="Game">
-<area shape="rect" id="node2" href="$class_state.html" title="Creates a State object. Creates a State object to be inherited. " alt="" coords="20,248,129,413"/>
-<area shape="rect" id="node3" href="$class_state_manager.html" title="Creates a StateManager object. Creates a StateManager object to be inherited. " alt="" coords="5,5,144,185"/>
-</map>
