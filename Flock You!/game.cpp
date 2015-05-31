@@ -137,6 +137,9 @@ void Game::update(float dt)
 	Vec2 v3 = { 0.0f, 0.0f };
 	Vec2 v4 = { 0.0f, 0.0f };
 
+	/*The speed increase of the boids*/
+	float speed = 25.0f;
+
 	/*test each Boid*/
 	for (unsigned int i = 0; i < boids.size(); i++)
 	{
@@ -155,7 +158,7 @@ void Game::update(float dt)
 		/*limit the velocity of the Boid*/
 		limitVelocity(i);
 		/*update the Boid position*/
-		boids[i]->setPosition(boids[i]->getPosition() + boids[i]->getVelocity());
+		boids[i]->setPosition(boids[i]->getPosition() + ((boids[i]->getVelocity()) * dt) * speed);
 	}
 }
 
@@ -207,7 +210,7 @@ Vec2 Game::rule1(int boidIndex)
 	}
 
 	/*divide the center of mass by the number of Boid objects tested*/
-	cOfM = cOfM / (float)(boids.size() - 2);
+	cOfM = cOfM / (float)(boids.size() - 1);
 
 	/*set the new velocity to the amount to move towards the Boid (1% of the distance in this case)*/
 	vel = (cOfM - boids[boidIndex]->getPosition()) / 100;
@@ -268,7 +271,7 @@ Vec2 Game::rule3(int boidIndex)
 	}
 
 	/*get the average velocity*/
-	vel = vel / (float)(boids.size() - 2);
+	vel = vel / (float)(boids.size() - 1);
 
 	/*set it to about an eighth of the Boid velocity*/
 	vel = (vel - boids[boidIndex]->getVelocity()) / 8;
